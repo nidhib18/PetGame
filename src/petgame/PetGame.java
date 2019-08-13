@@ -43,6 +43,9 @@ public class PetGame {
         level.Fullness(50,100);
         level.Energy(50, 100);
         level.Mood(50, 100);
+        Dog d = new Dog();
+        d.feed();
+        d.feed();
     }
     
 }

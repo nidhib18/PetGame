@@ -17,7 +17,7 @@ public abstract class Pets
 {
     public static String name;
     public static int age;
-    int mood,energy,full,eat,sleep,play,talk;
+    int mood,energy,full,sleep,play,talk;
    
    
     
@@ -29,7 +29,7 @@ public abstract class Pets
     }
     public Pets()
     {
-        this.eat = 0;
+        
         this.sleep = 0;
         this.play = 0;
         this.talk = 0;
@@ -52,9 +52,10 @@ public abstract class Pets
 
     @Override
     public String toString() {
-        return "Pets{" + "mood=" + this.mood + ", energy=" + this.energy + ", full=" + this.full + ", eat=" + this.eat + ", sleep=" + this.sleep + ", play=" + this.play + ", talk=" + this.talk + '}';
+        return "Pets{" + "mood=" + mood + ", energy=" + energy + ", full=" + full + ", sleep=" + sleep + ", play=" + play + ", talk=" + talk + '}';
     }
-    
+
+   
      
      
     

@@ -24,9 +24,14 @@ public class Dog extends Pets
     
     @Override
     public void feed(){
-        this.eat +=1;
+        
+        this.full += 10;
         this.mood +=10;
         this.energy +=10;
+        
+        System.out.print(" Mood:" +mood+  "Energy:" +energy+ "full:"+full );
+        
+        
    }
     
     @Override
@@ -35,6 +40,9 @@ public class Dog extends Pets
         this.mood +=10;
         this.energy +=10;
    }
+
+  
+   
     @Override
     public void play(){
        
@@ -49,7 +57,10 @@ public class Dog extends Pets
         this.energy -=10;
    }
     
-    
+    @Override
+     public String toString() {
+        return "Dog:" +super.toString();
+    }
    
     
    
