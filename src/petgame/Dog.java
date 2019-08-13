@@ -1,5 +1,6 @@
+package petgame;
 
-
+import petgame.Pets;
 import java.util.Scanner;
 
 /*
@@ -15,23 +16,43 @@ import java.util.Scanner;
 
 public class Dog extends Pets
 { 
-    
-    
-    
     public Dog()
     {
         super(name,age);
         
-        
-      
-        
-        
-        
     }
+    
     @Override
-    public void talk ()
-    {
-        System.out.println("Hello");
-    }
+    public void feed(){
+        this.eat +=1;
+        this.mood +=10;
+        this.energy +=10;
+   }
+    
+    @Override
+    public void sleep(){
+        
+        this.mood +=10;
+        this.energy +=10;
+   }
+    @Override
+    public void play(){
+       
+        this.mood +=10;
+        this.energy -=10;
+   }
+    
+    @Override
+    public void talk(){
+        
+        this.mood +=10;
+        this.energy -=10;
+   }
+    
+    
+   
+    
+   
+    
 }
 
