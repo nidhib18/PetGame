@@ -5,6 +5,7 @@
  */
 package petgame;
 
+
 import java.util.Scanner;
 
 /**
@@ -21,6 +22,7 @@ public class PetGame {
         Scanner scan = new Scanner (System.in);
         System.out.println("Choose your pet by the number");
         int choice = scan.nextInt();
+        int c = scan.nextInt();
         String choice2 = scan.nextLine();
         if (choice ==1||choice2.equalsIgnoreCase("Dog"))
         {
@@ -39,13 +41,35 @@ public class PetGame {
         {
             System.out.println("Hello owner!I'm your friend doggie");
         }
-        Levels level = new Levels();
-        level.Fullness(50,100);
-        level.Energy(50, 100);
-        level.Mood(50, 100);
-        Dog d = new Dog();
-        d.feed();
-        d.feed();
-    }
+//        Levels level = new Levels();
+////        level.Fullness(50,100);
+////        level.Energy(50, 100);
+////        level.Mood(50, 100);
+      Dog d = new Dog();
+//        d.feed();
+//        level.Energy(10, 100);
+
+        System.out.println("What would you like your pet to do: 1.Feed it 2.Play 3.Sleep 4.Talk");
+        if(c ==1)
+        {
+            d.feed();
+        }
+        if(c == 2)
+        {
+            d.play();
+        }
+        if(c == 3)
+        {
+            d.sleep();
+        }
+        if(c == 4)
+        {
+            d.talk();
+        }
+    };
+        //d.play();
+        
+
+}//
     
-}
+
