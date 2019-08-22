@@ -1,65 +1,78 @@
 package petgame;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Random;
+import java.util.Scanner;
 
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author LIANNE
- */
 public abstract class Pets 
+        
 {
-    public static String name;
-    public static int age;
-    int mood,energy,full,sleep,play,talk;
-   
-   
-    
+    Scanner scan = new Scanner(System.in);
+    static String name;
+    static int age;
     public Pets (String name,int age)
     {
        Pets.name = name;
        Pets.age = age;
+    }
+    
+    Random rand = new Random();
+    int full = Math.abs(rand.nextInt(100));
+    int mood = Math.abs(rand.nextInt(100));
+    int energy = Math.abs(rand.nextInt(100));
+  
+    public  void feed(){
        
+        mood += Math.abs(rand.nextInt(100));
+        energy += Math.abs(rand.nextInt(100));
+        full += Math.abs(rand.nextInt(100));
+        System.out.println(name+":Yummm");
+        System.out.println("Mood:" +mood+  "Energy:" +energy+ "full:"+full);
     }
-    public Pets()
-    {
+    
+    public void sleep(){
         
-        this.sleep = 0;
-        this.play = 0;
-        this.talk = 0;
-    }
+        mood += Math.abs(rand.nextInt(100));
+        energy += Math.abs(rand.nextInt(100));
+        full += Math.abs(rand.nextInt(100));
+        System.out.println(name+"ZZZZzzz..");
+        System.out.println("Mood:" +mood+  "Energy:" +energy+ "full:"+full );
+   }
     
-    public void feed ()
-    {
-    
-    }
-    public void sleep ()
-    {
-        
-    }
-    
-    public void play ()
-    {
+    public void play(){
        
-    }
-    public abstract void talk ();
+        mood += Math.abs(rand.nextInt(100));
+        energy -= Math.abs(rand.nextInt(100));
+        full -= Math.abs(rand.nextInt(100));
+        System.out.println(name+"YAyyyy");
+        System.out.println("Mood:" +mood+  "Energy:" +energy+ "full:"+full );
+   } 
+   public static void writeFile () throws IOException
+    {
+        Scanner scan = new Scanner (System.in);
+        String username = scan.nextLine();
+        
+            BufferedWriter w = new BufferedWriter(new FileWriter("files.txt"));
+            w.write (username);
+            w.write(Pets.name);
+            w.write(Pets.age);
+            w.close();
+            
+       System.out.println("Please name and age your pet:");
+       Pets.name = scan.nextLine();
+       Pets.age = scan.nextInt();
+       System.out.println("I'm"+" " + Pets.name + " &" + Pets.age + "years old");
+   }
+            
+}
 
-    @Override
-    public String toString() {
-        return "Pets{" + "mood=" + mood + ", energy=" + energy + ", full=" + full + ", sleep=" + sleep + ", play=" + play + ", talk=" + talk + '}';
-    }
-
-   
      
      
     
 
             
     
-}
+
