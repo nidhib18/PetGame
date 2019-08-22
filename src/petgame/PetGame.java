@@ -12,45 +12,50 @@ import java.util.Scanner;
 public class PetGame {
 
     public static void main(String[] args) throws IOException {
-       
-        Scanner scan = new Scanner (System.in);
-        
         Dog d = new Dog("bruno",6);
         Cat c = new Cat("candy",2);
         Rabbit r = new Rabbit("Rocky",1);
         GuineaPig g = new GuineaPig("Sally",3);
-        System.out.println("What kind of pet do you want:");
-        File file = new File("C:\\Users\\nidhi\\Documents\\NetBeansProjects\\PetGame\\Pets.txt"); 
+        //
+        System.out.println("What kind of pet do you want (choose 1 for Dog, 2 for Cat, 3 for Rabbit, 4 for Guinea Pig):");
+        File file = new File("Pets.txt"); 
         BufferedReader br = new BufferedReader(new FileReader(file)); 
         String st; 
         while ((st = br.readLine()) != null) 
         System.out.println(st); 
+        //.writeFile();
+        Scanner scan = new Scanner (System.in);
+        String choice = scan.nextLine();
+        //String choice2 = scan.nextLine();
         
-        int choice = scan.nextInt();
-    
-        String choice2 = scan.nextLine();
-        if (choice ==1||choice2.equalsIgnoreCase("Dog"))
+
+        if (choice.equals("1")||choice.equalsIgnoreCase("dog")) 
         {
             System.out.println("Hello owner!I'm your friend "+Dog.name+"the Dog");
-            d.DogInfo();
+           
+                d.DogInfo(); 
         }
-        if (choice ==2||choice2.equals("Cat"))
+        if (choice.equals("2")||choice.equalsIgnoreCase("Cat"))
         {
             System.out.println("Hello owner!I'm your friend "+Cat.name+ "the Cat");
             c.CatInfo();
         }
-         if (choice ==3||choice2.equals("Rabbit"))
+          if (choice.equals("3")||choice.equalsIgnoreCase("Rabbit"))
         {
             System.out.println("Hello owner!I'm your friend "+Rabbit.name+ "the Rabit");
             r.RabbitInfo();
         }
-         if (choice ==4||choice2.equals("Guinea pig"))
+         if (choice.equals("4")||choice.equalsIgnoreCase("Guinea pig"))
         {
             System.out.println("Hello owner!I'm your friend "+GuineaPig.name+ "the Guinea pig");
             g.GuineaInfo();
         }
-    }
+        
+         
+    
+        
+      
 }
-
+}
     
 
